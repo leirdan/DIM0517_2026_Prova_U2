@@ -27,7 +27,7 @@ jobs:
         run: mvn -B test 
 
       - name: Build image
-        run: docker build -t java-api
+        run: docker build -t java-api .
 
       - name: Run container
         run: docker run --detach --name java-api -p 8080:8080 java-api
