@@ -19,6 +19,7 @@ class ApplicationTest {
 
     @Test
     void hello() throws Exception {
+        System.out.println("Log de informação");
         mockMvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.message").value("Hello, World!"));
