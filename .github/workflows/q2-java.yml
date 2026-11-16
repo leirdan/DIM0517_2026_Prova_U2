@@ -24,13 +24,6 @@ jobs:
       - name: Build
         run: mvn -B compile
 
-      - name: Test
-        run: mvn test 
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Unit tests
         run: mvn test
       - name: If failed earlier
