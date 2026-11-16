@@ -25,7 +25,6 @@ jobs:
 
   test:
     needs: build
-    runs-on: ubuntu-latest
     steps:
       - name: Unit tests
         run: mvn test
