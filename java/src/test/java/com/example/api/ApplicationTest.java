@@ -26,6 +26,7 @@ class ApplicationTest {
 
     @Test
     void healthy() throws Exception {
+        System.out.println("Log de informação");
         mockMvc.perform(get("/healthy"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.status").value("healthy"));
