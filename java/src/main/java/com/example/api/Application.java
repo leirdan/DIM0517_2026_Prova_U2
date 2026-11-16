@@ -17,6 +17,7 @@ public class Application {
 
     @GetMapping("/hello")
     public Map<String, String> hello() {
+        // Comentário
         return Map.of("message", "Hello, World!");
     }
 
