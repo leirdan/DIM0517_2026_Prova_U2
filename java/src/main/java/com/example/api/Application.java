@@ -20,6 +20,7 @@ public class Application {
         // Comentário
         // Comentário 06
         // Comentário 07
+        // Último comentário
         return Map.of("message", "Hello, World!");
     }
 
