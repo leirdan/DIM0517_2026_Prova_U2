@@ -19,6 +19,7 @@ public class Application {
     public Map<String, String> hello() {
         // Comentário
         // Comentário 06
+        // Comentário 07
         return Map.of("message", "Hello, World!");
     }
 
