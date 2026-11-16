@@ -1,8 +1,12 @@
+on:
+  pull_request:
+    types: [ merged ]
+    branches: [ desenvolvimento ]
+
 name: Java
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -19,3 +23,11 @@ jobs:
       - name: Build
         run: mvn -B compile
 
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Unit tests
+        run: mvn test
+        if: failure()
+        run: echo "Workflow falhou"
