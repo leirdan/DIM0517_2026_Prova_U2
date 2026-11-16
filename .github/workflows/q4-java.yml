@@ -1,3 +1,6 @@
+on:
+  workflow_dispatch:
+
 name: Java
 
 jobs:
@@ -17,5 +20,14 @@ jobs:
           java-version: "21"
           cache: maven
 
-      - name: Build
-        run: mvn -B compile
+      - name: Build 
+        run: mvn -B compile 
+
+      - name: Unit tests
+        run: mvn -B test 
+
+      - name: Build image
+        run: docker build -t java-api
+
+      - name: Run container
+        run: docker run --detach --name java-api -p 8080:8080 java-api
